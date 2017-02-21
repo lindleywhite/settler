@@ -47,6 +47,10 @@ make python2.7-dev python-pip re2c supervisor unattended-upgrades whois vim libn
 
 ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 
+#Reduce Timeout on Network Interfaces wait
+
+sed -i "s/timeout 300;/timeout 15;/" /etc/dhcp/dhclient.conf
+
 # Install PHP Stuffs
 
 apt-get install -y --force-yes php7.1-cli php7.1-dev \
